@@ -301,7 +301,7 @@ def minimax(player, board, depth=6):
         best_move = -1
         for i, j in board.available():
             temp = board.clone()
-            temp.items[i][j] = X(None)
+            temp[i][j] = X(None)
             best_move = max(best_move, minimax(HUMAN, temp, depth - 1))
         return best_move
 

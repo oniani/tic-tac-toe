@@ -13,4 +13,4 @@ and a simple minimax with [memoization](https://en.wikipedia.org/wiki/Memoizatio
 
 ## License
 
-[GNU General Public License v3.0](LICENSE)
+[MIT License](LICENSE)

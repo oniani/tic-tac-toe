@@ -8,9 +8,8 @@ Author: David Oniani
 E-mail: onianidavid@gmail.com
 
 License:
-    The code is licensed under GNU General Public License v3.0.
-    Please read the LICENSE file in this distribution for details
-    regarding the licensing of this code.
+    The code is licensed under MIT License. Please read the LICENSE file in
+    this distribution for details regarding the licensing of this code.
 
 Description:
     Implementation of the Tic-tac-toe game with GUI and 3 levels of difficulty.

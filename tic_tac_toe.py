@@ -98,7 +98,7 @@ class Board:
         return result
 
     def reset(self):
-        """ Reset the board.
+        """Reset the board.
 
         This method will mutate this board to contain all dummy
         turtles. This way the board can be reset when a new game
@@ -172,12 +172,7 @@ class Board:
 
     def available(self):
         """Return available (empty) cells."""
-        return [
-            (i, j)
-            for j in range(3)
-            for i in range(3)
-            if isinstance(self.items[i][j], Dummy)
-        ]
+        return [(i, j) for j in range(3) for i in range(3) if isinstance(self.items[i][j], Dummy)]
 
     def clone(self):
         """Return a copy of the board."""
@@ -346,9 +341,7 @@ class TicTacToe(tkinter.Frame):
         def draw_grid():
             screen.clear()
             screen.tracer(1000000)
-            screen.setworldcoordinates(
-                SCREENMIN, SCREENMIN, SCREENMAX, SCREENMAX
-            )
+            screen.setworldcoordinates(SCREENMIN, SCREENMIN, SCREENMAX, SCREENMAX)
             screen.bgcolor("white")
             screen.tracer(0)
             t = RawTurtle(canvas)
@@ -380,9 +373,7 @@ class TicTacToe(tkinter.Frame):
         def start_handler():
             new_game()
 
-        btn_start = tkinter.Button(
-            frame, text="New Game", command=start_handler
-        )
+        btn_start = tkinter.Button(frame, text="New Game", command=start_handler)
         btn_start.pack()
 
         tkvar = tkinter.StringVar(self)
@@ -394,9 +385,7 @@ class TicTacToe(tkinter.Frame):
         lbl_level = tkinter.Label(frame, text="AI Level")
         lbl_level.pack()
 
-        dd_level = tkinter.OptionMenu(
-            frame, tkvar, command=level_handler, *AI_LEVELS
-        )
+        dd_level = tkinter.OptionMenu(frame, tkvar, command=level_handler, *AI_LEVELS)
         dd_level.pack()
 
         def quit_handler():
@@ -458,17 +447,11 @@ class TicTacToe(tkinter.Frame):
                         self.locked = True
 
                     if board.eval() == 1:
-                        tkinter.messagebox.showwarning(
-                            "Game Over", "Expectedly, Machine wins."
-                        )
+                        tkinter.messagebox.showwarning("Game Over", "Expectedly, Machine wins.")
                     elif board.eval() == -1:
-                        tkinter.messagebox.showerror(
-                            "Game Over", "Suprisingly, Human wins."
-                        )
+                        tkinter.messagebox.showerror("Game Over", "Suprisingly, Human wins.")
                     elif board.is_full():
-                        tkinter.messagebox.showinfo(
-                            "Game Over", "It was a tie."
-                        )
+                        tkinter.messagebox.showinfo("Game Over", "It was a tie.")
 
         screen.onclick(mouse_click)
 
